@@ -23,8 +23,7 @@ public class Dish {
     private Carb carb;
     @Column(nullable = false, length =10)
     private TypeOfDish type;
-    @OneToOne
-    @JoinColumn(name = "recipe_id")
+    @OneToOne (mappedBy = "dish", cascade = CascadeType.ALL)
     private Recipe recipe;
     @Column(name= "can_prepp")
     private boolean canPrepp;// if true = går preppa dagen innan.
