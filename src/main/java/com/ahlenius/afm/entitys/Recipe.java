@@ -11,7 +11,7 @@ public class Recipe {
     @OneToOne
     @JoinColumn(name = "dish_id")
     private Dish dish;
-    @Column(name= "info", length = 200)
+    @Column(length = 200)
     private String info;
 
     public Recipe() {}

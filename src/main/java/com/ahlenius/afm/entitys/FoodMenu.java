@@ -2,19 +2,21 @@ package com.ahlenius.afm.entitys;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+
 @Entity
+@Table(name ="food_menu")
 public class FoodMenu {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "food_menu_id")
     private long menuId;
-    private
-
-
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinTable(name= "join_dish_with_menu",
-            joinColumns = {@JoinColumn(name = "food_menu_id")},
-            inverseJoinColumns = {@JoinColumn(name = "dish_id")})
-    List<Dish> Menu = new ArrayList<>();  // 5 rätter
+    @Column(name= "created_at", nullable = false)
+    private LocalDate createdAt;
+    @OneToMany(mappedBy = "foodMenu",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true)
+    private List<DayMenu> Menu = new ArrayList<>();  // 5 rätter kopplat till rader.
 }

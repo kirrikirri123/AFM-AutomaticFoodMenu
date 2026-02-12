@@ -2,12 +2,12 @@ package com.ahlenius.afm.entitys.ENUM;
 
 public enum Carb {
     PASTA ("Pasta"),
-    RIS ("Ris"),
-    POTATIS ("Potatis"),
-    NUDLAR ("Nudlar"),
+    RICE ("Ris"),
+    POTATO ("Potatis"),
+    NOODLE("Nudlar"),
     BULGUR ("Bulgur"),
     COUSCOUS ("Couscous"),
-    HAVRERIS ("Havreris");
+    OATRICE ("Havreris");
 
     private final String swedish;
 
